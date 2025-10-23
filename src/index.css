@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Literata";
+  src: url("../src/assets/font/Literata-VariableFont_opsz\,wght.ttf") format("truetype");
+  font-weight: 100 900; /* Variable range */
+  font-style: normal;
+}
+
+
+@theme {
+  --font-literata: "Literata", sans-serif;
+}
+
+mark {
+  background-color: rgba(37, 99, 235, 0.1); /* faint blue tint */
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 3px;
+}
+
+
+/* Global typography */
+body {
+  font-family: 'Unica77', sans-serif;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.6;
+}
+
+.font-mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+h1, h2, strong {
+  letter-spacing: -0.015em;
+}
+
+a {
+  transition: color 0.2s ease;
+}
+
+hr {
+  border-color: #dcdcdc;
+}
