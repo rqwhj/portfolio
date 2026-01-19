@@ -1,4 +1,3 @@
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -20,7 +19,6 @@ const item = {
     opacity: 1,
     filter: "blur(0px)",
     y: 0,
-    // ✅ Fixed the Framer Motion type error for ease
     transition: { duration: 0.9, ease: [0.25, 1, 0.5, 1] as any },
   },
 };
@@ -44,56 +42,20 @@ const App = () => {
 
   const sections = [
     <header key="header" className="mb-8">
-      <h1 className="font-literata text-[22px] font-regular tracking-tight mb-2">
+      <h1 className="font-literata text-[20px] font-medium tracking-tight">
         Riley Thoft-Brown
       </h1>
-      <div className="flex space-x-5 text-black">
-        <a
-          href="https://x.com/rjtb123"
-          target="_blank"
-          rel="noreferrer"
-          className="opacity-80 hover:opacity-100 transition-opacity duration-200"
-        >
-          <Twitter size={20} strokeWidth={1.5} />
-        </a>
-        <a
-          href="mailto:rileythoftbrown@gmail.com"
-          className="opacity-80 hover:opacity-100 transition-opacity duration-200"
-        >
-          <Mail size={20} strokeWidth={1.5} />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/riley-thoft-brown-75b49a388/"
-          target="_blank"
-          rel="noreferrer"
-          className="opacity-80 hover:opacity-100 transition-opacity duration-200"
-        >
-          <Linkedin size={20} strokeWidth={1.5} />
-        </a>
-        <a
-          href="https://github.com/rqwhj"
-          target="_blank"
-          rel="noreferrer"
-          className="opacity-80 hover:opacity-100 transition-opacity duration-200"
-        >
-          <Github size={20} strokeWidth={1.5} />
-        </a>
-      </div>
     </header>,
 
     <section
       key="bio"
-      className="font-literata text-[15px] leading-[1.2] font-normal text-black mb-10"
+      className="font-literata text-[14px] leading-[1.2] font-medium text-black mb-10"
     >
       <p className="mb-5">
-        I'm a hacker and security engineer with an ambition for dissecting
-        low-level architecture. I love breaking things through personal
-        experimentation and learning every nuance of esoteric security
-        solutions. I am a CIS student at Wentworth Institute of Technology.
+        Security engineer specializing in reverse engineering, kernel internals, and vulnerability research. CIS student at Wentworth Institute of Technology.
       </p>
       <p>
-        Currently exploring smart contract auditing and pursuing co-ops in
-        Greater Boston.
+        Currently, a software engineering intern for <img src="/logic.png" alt="Logic" className="inline h-[1em] align-baseline" /> Logic Robotics.
       </p>
     </section>,
 
@@ -101,14 +63,14 @@ const App = () => {
 
     <div
       key="grid"
-      className="grid grid-cols-2 gap-12 font-literata text-[15px] leading-[1.2] font-normal tracking-tight"
+      className="grid grid-cols-2 gap-12 font-literata text-[14px] leading-[1.2] font-medium tracking-tight"
     >
       <section>
         <div className="flex justify-between mb-2">
-          <h2 className="text-black text-[15px] tracking-tight">Contact</h2>
+          <h2 className="text-black text-[14px] tracking-tight">Contact</h2>
           <span className="text-black">[ 1 ]</span>
         </div>
-        <ul className="space-y-[4px]">
+        <ul className="space-y-[2px]">
           {[
             { label: "• Twitter", href: "https://x.com/rjtb123" },
             { label: "• Mail", href: "mailto:rileythoftbrown@gmail.com" },
@@ -116,7 +78,7 @@ const App = () => {
               label: "• LinkedIn",
               href: "https://www.linkedin.com/in/riley-thoft-brown-75b49a388/",
             },
-            { label: "• GitHub", href: "https://github.com/rqwhj" },
+            { label: "• GitHub", href: "https://github.com/rjtbdev" },
           ].map((item, i) => (
             <li key={i} className="flex justify-between">
               <a
@@ -135,17 +97,22 @@ const App = () => {
 
       <section>
         <div className="flex justify-between mb-2">
-          <h2 className="text-black font-regular text-[15px] tracking-tight">
+          <h2 className="text-black font-medium text-[14px] tracking-tight">
             Projects
           </h2>
           <span className="text-black">[ 2 ]</span>
         </div>
-        <ul className="space-y-[2px]">
+        <ul className="space-y-[1px]">
           {[
             {
               color: "from-[#2f3e57] to-[#0c1f3f]",
-              name: "Smart Contract Auditing",
-              year: "2025–",
+              name: "Hypervisor Development",
+              year: "2025-",
+            },
+            {
+              color: "from-[#b1c8e8] to-[#86ade3]",
+              name: "Solana Wallet Tracker",
+              year: "2025",
             },
             {
               color: "from-[#566481] to-[#374f81]",
@@ -153,19 +120,14 @@ const App = () => {
               year: "2024",
             },
             {
-              color: "from-[#b1c8e8] to-[#86ade3]",
-              name: "PikaBot Malware Analysis",
-              year: "2024",
-            },
-            {
               color: "from-[#566481] to-[#e3f2fa]",
               name: "Kernel Reverse Engineering",
-              year: "2023–25",
+              year: "2022–25",
             },
           ].map((proj, i) => (
             <li key={i} className="flex justify-between items-center">
               <span className="flex items-center space-x-2">
-                <span className={`w-2 h-2 bg-gradient-to-br ${proj.color}`} />
+                <span className={`w-1.5 h-1.5 bg-gradient-to-br ${proj.color}`} />
                 <span>{proj.name}</span>
               </span>
               <span className="w-15 text-right">{proj.year}</span>
@@ -177,25 +139,25 @@ const App = () => {
 
     <section
       key="skills"
-      className="mt-10 font-literata text-[15px] leading-[1.2] font-normal"
+      className="mt-10 font-literata text-[14px] leading-[1.2] font-medium"
     >
       <div className="flex justify-between mb-2">
-        <h2 className="text-black font-regular text-[15px] tracking-tight">
+        <h2 className="text-black font-medium text-[14px] tracking-tight">
           Skills
         </h2>
         <span className="text-black">[ 3 ]</span>
       </div>
       <p>
-        C++, C#, Python, Java, IDA Pro, Ghidra, x64dbg, PostgreSQL, Git, Linux
+        C++, C#, Java, Go, Typescript, Python, IDA Pro, PostgreSQL, Git, Linux
       </p>
     </section>,
 
     <section
       key="writeups"
-      className="mt-10 font-literata text-[15px] leading-[1.2] font-normal"
+      className="mt-10 font-literata text-[14px] leading-[1.2] font-medium"
     >
       <div className="flex justify-between mb-3">
-        <h2 className="text-black font-regular text-[15px] tracking-tight">
+        <h2 className="text-black font-medium text-[14px] tracking-tight">
           Writeups
         </h2>
         <span className="text-black">[ 4 ]</span>
@@ -217,7 +179,7 @@ const App = () => {
                 />
               </div>
               <div className="p-3">
-                <h3 className="text-[15px] mb-[2px] font-medium tracking-tight">
+                <h3 className="text-[14px] mb-[2px] font-medium tracking-tight">
                   {w.title}
                 </h3>
                 <p className="text-[13.5px] opacity-80">Read analysis →</p>
@@ -236,7 +198,7 @@ const App = () => {
                 />
               </div>
               <div className="p-3">
-                <h3 className="text-[15px] mb-[2px] font-medium tracking-tight">
+                <h3 className="text-[14px] mb-[2px] font-medium tracking-tight">
                   {w.title}
                 </h3>
                 <p className="text-[13.5px] opacity-50">Coming soon</p>
@@ -253,7 +215,7 @@ const App = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, ease: [0.25, 1, 0.5, 1] as any }}
-      className="max-w-2xl mx-auto px-6 py-15 font-literata text-[15px] leading-[1.2] tracking-tight text-black bg-white overflow-hidden"
+      className="max-w-2xl mx-auto px-6 py-15 font-literata text-[14px] leading-[1.2] tracking-tight text-black bg-white overflow-hidden"
     >
       <motion.div variants={container} initial="hidden" animate="visible">
         {sections.map((section, i) => (

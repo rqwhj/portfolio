@@ -1,12 +1,9 @@
-import React from "react"; // ✅ Required for JSX in TSX
+import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import WriteupPage from "./WriteupPage";
-
-// Import your Markdown as an asset (after adding assetsInclude in vite.config)
-
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
